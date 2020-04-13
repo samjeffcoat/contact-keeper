@@ -16,4 +16,18 @@ router.post('/', (req, res) => {
   res.send('Get all contacts');
 });
 
+// @ route          Put api/contacts/:id
+// @desc            Update contact
+// @access          Private
+router.put('/:id', (req, res) => {
+  res.send('Update contact ');
+});
+
+// @ route          delete api/contacts/:id
+// @desc            delete contact
+// @access          Private
+router.delete('/:id', (req, res) => {
+  res.send('delete contact ');
+});
+
 module.exports = router;
