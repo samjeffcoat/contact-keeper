@@ -4,19 +4,22 @@ import './App.css';
 import NavBar from './components/layout/NavBar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
+import ContactState from './context/contact/ContactState';
 const App = () => {
   return (
-    <Router>
-      <Fragment>
-        <NavBar />
-        <div className='containter'>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/about' component={About} />
-          </Switch>
-        </div>
-      </Fragment>
-    </Router>
+    <ContactState>
+      <Router>
+        <Fragment>
+          <NavBar />
+          <div className='containter'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About} />
+            </Switch>
+          </div>
+        </Fragment>
+      </Router>
+    </ContactState>
   );
 };
 
