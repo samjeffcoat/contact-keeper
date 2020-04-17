@@ -38,7 +38,7 @@ const ContactForm = (props) => {
       <input
         type='email'
         placeholder='Email'
-        name='name'
+        name='email'
         value={email}
         onChange={onChange}
       />
@@ -55,14 +55,16 @@ const ContactForm = (props) => {
         name='type'
         value='personal'
         checked={type === 'personal'}
-      />
+        onChange={onChange}
+      />{' '}
       Personal{' '}
       <input
         type='radio'
         name='type'
-        value='Professional'
+        value='professional'
         checked={type === 'professional'}
-      />
+        onChange={onChange}
+      />{' '}
       Professional
       <div>
         <input
