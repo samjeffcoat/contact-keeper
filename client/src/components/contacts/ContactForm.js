@@ -1,9 +1,27 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import ContactContext from '../../context/contact/contactContext';
 import PropTypes from 'prop-types';
 
 const ContactForm = (props) => {
   const contactContext = useContext(ContactContext);
+
+  const { addContact, current } = contactContext;
+
+  useEffect(() => {
+    if (current !== null) {
+      setContact(current);
+    } else {
+      setContact(
+        {
+          name: '',
+          email: '',
+          phone: '',
+          type: 'personal',
+        },
+        [contactContext, current]
+      );
+    }
+  });
   const [contact, setContact] = useState({
     name: '',
     email: '',
@@ -17,7 +35,7 @@ const ContactForm = (props) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
     e.preventDefault();
-    contactContext.addContact(contact);
+    addContact(contact);
     setContact({
       name: '',
       email: '',
