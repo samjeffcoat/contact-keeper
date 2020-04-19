@@ -86,7 +86,7 @@ const ContactState = (props) => {
   const clearFilter = () => {
     dispatch({ type: CLEAR_FILTER });
   };
-  https: return (
+  return (
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
