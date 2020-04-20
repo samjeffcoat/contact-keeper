@@ -67,7 +67,7 @@ const Login = (props) => {
         <input
           type='submit'
           value='Login'
-          className='btn btn-primarty btn-block'
+          className='btn btn-primary btn-block'
         />
       </form>
     </div>
