@@ -5,7 +5,7 @@ const app = express();
 
 //Connect Database
 connectDB();
-
+//removed dependencie
 // Init Middleware
 app.use(express.json({ extended: false }));
 
